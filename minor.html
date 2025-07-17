@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Calendar with Event Notes & Tools</title>
+  <link rel="stylesheet" href="minor.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+   <img src="image.png" height="650" width="1400">
+  <h1>Calendar with Event Notes</h1>
+
+  <div class="controls">
+    <label for="monthSelect">Month:</label>
+    <select id="monthSelect">
+      <option value="01">January</option>
+      <option value="02">February</option>
+      <option value="03">March</option>
+      <option value="04">April</option>
+      <option value="05">May</option>
+      <option value="06">June</option>
+      <option value="07">July</option>
+      <option value="08">August</option>
+      <option value="09">September</option>
+      <option value="10">October</option>
+      <option value="11">November</option>
+      <option value="12">December</option>
+    </select>
+
+    <label for="yearInput">Year:</label>
+    <input type="number" id="yearInput" min="1" max="9999" value="2025" />
+
+    <button id="prevBtn">&laquo; Prev</button>
+    <button id="nextBtn">Next &raquo;</button>
+    <button id="viewEventsBtn">View Events</button>
+  </div>
+
+  <div id="calendar" class="calendar"></div>
+
+  <div class="container">
+    <h1>Multi-Number Addition</h1>
+    <input type="text" id="numbers" placeholder="Numbers separated by commas" />
+    <button onclick="addNumbers()">Add</button>
+    <p id="result"></p>
+  </div>
+
+  <div class="container2">
+    <h2>Percentage Calculator</h2>
+    <input type="number" id="number" placeholder="Enter number" />
+    <input type="number" id="percent" placeholder="Enter percentage" />
+    <button onclick="calculatePercentage()">Calculate</button>
+    <p id="result"></p>
+  </div>
+
+  <div class="container3">
+    <h1>Subtraction Calculator</h1>
+    <div class="inputs">
+      <input type="number" id="num1" placeholder="First Number" />
+      <span>-</span>
+      <input type="number" id="num2" placeholder="Second Number" />
+      <button onclick="subtractNumbers()">Subtract</button>
+    </div>
+    <p id="result"></p>
+  </div>
+
+  <div class="container4">
+    <h1>Budget Tracker</h1>
+    <div class="inputs">
+      <input type="text" id="item" placeholder="Item Name" />
+      <input type="number" id="amount" placeholder="Amount" />
+      <button onclick="addExpense()">Add</button>
+    </div>
+    <ul id="expenseList"></ul>
+    <h3>Total: ₹<span id="totalAmount">0</span></h3>
+  </div>
+   
+
+
+ <div class="container summary-section">
+  <h2>📊 Monthly Summary</h2>
+  <div class="summary-boxes">
+    <div class="summary-card income-card">
+      <h3>Total Income</h3>
+      <p id="totalIncome">₹0</p>
+    </div>
+    <div class="summary-card expense-card">
+      <h3>Total Expenses</h3>
+      <p id="totalExpenses">₹0</p>
+    </div>
+    <div class="summary-card savings-card">
+      <h3>Net Savings</h3>
+      <p id="netSavings">₹0</p>
+    </div>
+  </div>
+  <button id="updateSummary">Update Summary</button>
+</div>
+
+<!-- Example income & expense inputs -->
+<input type="number" class="income-input" placeholder="Enter Income">
+<input type="number" class="expense-input" placeholder="Enter Expense">
+
+
+
+
+<input type="number" id="expenseAmount" placeholder="Amount">
+<input type="text" id="expenseDesc" placeholder="Description">
+<button id="addExpenseBtn">Add Expense</button>
+<ul id="expenseList"></ul>
+<div id="summary"></div>
+<canvas id="expenseChart" width="400" height="200"></canvas>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="minor.js"></script>
+</body>
+</html>

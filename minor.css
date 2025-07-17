@@ -1,0 +1,315 @@
+/* Body Styling */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+  margin: 0;
+  padding: 40px;
+  color: #333;
+  animation: fadeInBody 1s ease-in;
+}
+
+@keyframes fadeInBody {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 36px;
+  color: #3f51b5;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  animation: bounceIn 1s ease;
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0.5); opacity: 0; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+.controls {
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  animation: slideIn 1s ease;
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+select, input[type="number"] {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 2px solid #3f51b5;
+  border-radius: 6px;
+  background: linear-gradient(to right, #ece9e6, #ffffff);
+  color: #333;
+  transition: all 0.3s;
+}
+
+select:focus, input:focus {
+  border-color: #3f51b5;
+  box-shadow: 0 0 10px #3f51b5;
+}
+
+button {
+  padding: 10px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #3f51b5 0%, #5a55ae 100%);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: pulseButton 2s infinite;
+}
+
+@keyframes pulseButton {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+button:hover {
+  background: linear-gradient(135deg, #5a55ae 0%, #3f51b5 100%);
+  transform: translateY(-3px) scale(1.08);
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  margin-bottom: 40px;
+  animation: zoomIn 1s ease;
+}
+
+@keyframes zoomIn {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.day {
+  padding: 8px 4px;
+  background-color: #fdfdfd;
+  text-align: center;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+  animation: flipIn 0.8s ease;
+  min-height: 40px;
+}
+
+@keyframes flipIn {
+  from { transform: rotateY(90deg); opacity: 0; }
+  to { transform: rotateY(0deg); opacity: 1; }
+}
+
+.day:hover {
+  transform: scale(1.1);
+  background: #e3f2fd;
+}
+
+.header {
+  font-weight: bold;
+  background: linear-gradient(to right, #3f51b5, #2196f3);
+  color: white;
+}
+
+.today {
+  background: linear-gradient(to right, #4caf50, #81c784);
+  color: white;
+  border: 2px solid #388e3c;
+  animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+  from { transform: translateY(0); }
+  to { transform: translateY(-5px); }
+}
+
+.note-indicator {
+  width: 8px;
+  height: 8px;
+  background: #e91e63;
+  border-radius: 50%;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  animation: pulseNote 1.5s infinite;
+}
+
+@keyframes pulseNote {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.6; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.day[data-note]:hover::after {
+  content: attr(data-note);
+  position: absolute;
+  background: #333;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-size: 13px;
+  max-width: 220px;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  pointer-events: none;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+.container, .container2, .container3, .container4 {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  text-align: center;
+  margin-bottom: 20px;
+  animation: fadeInUp 0.5s ease;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.container4 {
+  background: linear-gradient(135deg, #5c6bc0 0%, #3949ab 100%);
+  color: white;
+}
+
+input[type="text"], input[type="number"] {
+  width: 200px;
+  padding: 10px;
+  margin: 10px;
+  font-size: 16px;
+}
+
+.inputs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+span {
+  font-size: 24px;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background: #121212;
+  color: #f5f5f5;
+}
+
+body.dark-mode button {
+  background: linear-gradient(to right, #673ab7, #512da8);
+}
+
+body.dark-mode button:hover {
+  background: linear-gradient(to right, #4527a0, #311b92);
+}
+
+body.dark-mode .day {
+  background: #1e1e1e;
+  color: #f5f5f5;
+}
+
+body.dark-mode .header {
+  background: #512da8;
+}
+
+body.dark-mode .container, body.dark-mode .container2, body.dark-mode .container3, body.dark-mode .container4 {
+  background: #1e1e1e;
+  color: #f5f5f5;
+}
+
+body.dark-mode select, body.dark-mode input {
+  background: #333;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+body.dark-mode .container4 {
+  background: #512da8;
+  color: white;
+}
+
+/* Colorful Mode */
+body.colorful-mode {
+  background: linear-gradient(to right, #ff9a9e, #fad0c4, #fbc2eb);
+  color: #333;
+}
+
+body.colorful-mode .day {
+  background: linear-gradient(to right, #a18cd1, #fbc2eb);
+  color: white;
+}
+
+body.colorful-mode .header {
+  background: linear-gradient(to right, #ff758c, #ff7eb3);
+  color: white;
+}
+
+body.colorful-mode button {
+  background: linear-gradient(to right, #ff758c, #ff7eb3);
+  color: white;
+}
+
+.summary-section {
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  animation: fadeInUp 1s ease;
+}
+
+.summary-boxes {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.summary-card {
+  flex: 1;
+  min-width: 200px;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  animation: zoomIn 1s ease;
+}
+
+.income-card {
+  background: linear-gradient(to right, #00b09b, #96c93d);
+}
+
+.expense-card {
+  background: linear-gradient(to right, #f85032, #e73827);
+}
+
+.savings-card {
+  background: linear-gradient(to right, #43cea2, #185a9d);
+}
+
+
+
+
+
+
+
